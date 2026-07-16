@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rescisão indireta: quando o empregado pode pedir demissão e receber como se fosse demitido? Artigo jurídico do Dr. Kevin Miyamoto — Miyamoto Advocacia.">
-  <title>Rescisão indireta: quando o empregado pode pedir demissão e receber tudo? — Miyamoto Advocacia</title>
+  <meta name="description" content="Divórcio e separação de bens: como funciona o processo, os regimes de bens e a partilha do patrimônio. Artigo jurídico do Dr. Kevin Miyamoto — Miyamoto Advocacia.">
+  <title>Divórcio e Separação de Bens: como funciona a partilha do patrimônio? — Miyamoto Advocacia</title>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Work+Sans:wght@300;400;500&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -15,7 +15,7 @@
     button{font-family:inherit;cursor:pointer;border:none;background:none}
     :root{
       --gold:#C8A84B;--gold-hover:#E4C76B;--gold-dim:rgba(200,168,75,0.10);
-      --navy-deep:#07122A;--navy-main:#0B1C3B;--navy-alt:#0F2348;
+      --navy-deep:#07122A;--navy-main:#0B1C3B;--navy-alt:#0F2348;--cream:#FDFAF0;
       --text-main:#FDFAF0;--text-sec:#A8BDD8;--text-muted:#4A6898;--border:#1A3060;
       --font-d:'Gloock',serif;--font-e:'Poiret One',sans-serif;--font-ui:'Work Sans',sans-serif;
       --t:200ms ease;--max:1100px;
@@ -24,6 +24,7 @@
     @media(min-width:768px){.container{padding:0 40px}}
     @media(min-width:1280px){.container{padding:0 60px}}
 
+    /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(7,18,42,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
     .nav__inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 20px}
     @media(min-width:768px){.nav__inner{padding:0 40px}}
@@ -51,6 +52,7 @@
     .nav__mobile-cta{margin-top:24px;background:var(--gold);color:var(--navy-main);padding:16px;text-align:center;font-family:var(--font-ui);font-weight:500;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;min-height:44px;display:flex;align-items:center;justify-content:center}
     .nav__mobile-cta:hover{background:var(--gold-hover)}
 
+    /* ARTIGO HERO */
     .artigo-hero{padding:120px 0 60px;background:var(--navy-main)}
     .breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px;flex-wrap:wrap}
     .breadcrumb a{transition:color var(--t)}.breadcrumb a:hover{color:var(--gold)}
@@ -59,6 +61,7 @@
     .artigo-hero__title{font-family:var(--font-d);font-size:clamp(28px,5vw,52px);color:var(--text-main);line-height:1.15;margin-bottom:20px;max-width:760px}
     .artigo-hero__meta{font-family:var(--font-ui);font-weight:400;font-size:13px;color:var(--text-muted);letter-spacing:0.06em}
 
+    /* ARTIGO BODY */
     .artigo-body{padding:64px 0 96px;background:var(--navy-alt)}
     .artigo-layout{display:grid;grid-template-columns:1fr;gap:48px}
     @media(min-width:960px){.artigo-layout{grid-template-columns:1fr 340px;align-items:start}}
@@ -73,6 +76,7 @@
     .artigo-content .destaque{background:var(--navy-main);border-left:3px solid var(--gold);padding:24px;margin:32px 0}
     .artigo-content .destaque p{margin-bottom:0;color:var(--text-main)}
 
+    /* SIDEBAR */
     .artigo-sidebar{position:sticky;top:88px}
     .cta-box{border:1px solid var(--gold);background:var(--navy-main);padding:32px}
     .cta-box__title{font-family:var(--font-d);font-size:20px;color:var(--text-main);margin-bottom:12px}
@@ -82,6 +86,7 @@
     .btn-primary:hover{background:var(--gold-hover);border-color:var(--gold-hover)}
     .btn svg{width:16px;height:16px;flex-shrink:0}
 
+    /* RELACIONADOS */
     .relacionados{background:var(--navy-main);padding:64px 0}
     .relacionados__title{font-family:var(--font-d);font-size:clamp(22px,3vw,30px);color:var(--text-main);margin-bottom:40px}
     .rel-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border)}
@@ -93,13 +98,16 @@
     .rel-card__link{font-family:var(--font-ui);font-weight:500;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);transition:color var(--t)}
     .rel-card__link:hover{color:var(--gold-hover)}
 
+    /* FOOTER */
     .footer{background:var(--navy-deep);padding:48px 0 0}
     .footer__bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;border-top:1px solid var(--border);font-family:var(--font-ui);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted)}
 
+    /* WA FAB */
     .whatsapp-fab{position:fixed;bottom:28px;right:24px;z-index:800;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);animation:waPulse 3s ease-in-out infinite;transition:transform var(--t)}
     .whatsapp-fab:hover{transform:scale(1.08);animation:none}
     .whatsapp-fab svg{width:26px;height:26px;fill:#FFF}
     @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.6);transform:scale(1.05)}}
+
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
   </style>
 </head>
@@ -118,7 +126,7 @@
         <a href="../index.html#contato" class="nav__link" role="menuitem">Contato</a>
       </div>
       <div style="display:flex;align-items:center;gap:16px">
-        
+
         <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
           <span class="nav__burger-line"></span><span class="nav__burger-line"></span><span class="nav__burger-line"></span>
         </button>
@@ -130,7 +138,7 @@
     <a href="../index.html#sobre"   class="nav__mobile-link" onclick="closeMenu()">Sobre</a>
     <a href="index.html"            class="nav__mobile-link" onclick="closeMenu()">Blog</a>
     <a href="../index.html#contato" class="nav__mobile-link" onclick="closeMenu()">Contato</a>
-    
+
   </div>
 
   <div class="artigo-hero">
@@ -138,11 +146,11 @@
       <nav class="breadcrumb" aria-label="Localização">
         <a href="../index.html">Início</a><span>›</span>
         <a href="index.html">Blog</a><span>›</span>
-        <span style="color:var(--text-sec)">Rescisão Indireta</span>
+        <span style="color:var(--text-sec)">Divórcio e Separação de Bens</span>
       </nav>
-      <span class="artigo-hero__cat">Direito Trabalhista</span>
-      <h1 class="artigo-hero__title">Rescisão indireta: quando o empregado pode pedir demissão e receber como se fosse demitido?</h1>
-      <p class="artigo-hero__meta">Dr. Kevin Miyamoto · 05 de março de 2025 · 6 min de leitura</p>
+      <span class="artigo-hero__cat">Direito Civil</span>
+      <h1 class="artigo-hero__title">Divórcio e separação de bens: como funciona a partilha do patrimônio?</h1>
+      <p class="artigo-hero__meta">Dr. Kevin Miyamoto · 02 de abril de 2025 · 7 min de leitura</p>
     </div>
   </div>
 
@@ -150,61 +158,43 @@
     <div class="container">
       <div class="artigo-layout">
         <article class="artigo-content">
-          <p>Muita gente acredita que só tem direito às verbas rescisórias completas — aviso prévio, FGTS com multa de 40%, seguro-desemprego — se for <em>demitido sem justa causa</em>. Mas existe uma situação em que o <strong>próprio empregado pode encerrar o contrato</strong> e ainda assim receber tudo como se tivesse sido demitido. Essa situação se chama <strong>rescisão indireta</strong>.</p>
+          <p>Desde 2010, o divórcio no Brasil não exige mais prazo de separação prévia nem discussão sobre culpa — basta a vontade de um dos cônjuges. Mas a parte que costuma gerar mais dúvidas e conflitos não é o fim do casamento em si: é <strong>como o patrimônio construído durante a união vai ser dividido</strong>.</p>
 
-          <h2>O que é rescisão indireta?</h2>
-          <p>A rescisão indireta é a "justa causa do empregador". Assim como a empresa pode demitir por justa causa quando o funcionário comete uma falta grave, o empregado também pode encerrar o contrato quando o <strong>empregador descumpre obrigações essenciais</strong> previstas na lei ou no contrato de trabalho.</p>
-          <p>O fundamento legal está no art. 483 da CLT, que lista as situações em que o empregado pode considerar rescindido o contrato e pleitear a devida indenização.</p>
+          <h2>Divórcio consensual ou litigioso?</h2>
+          <p>Quando o casal está de acordo sobre o fim do casamento, a partilha de bens, a guarda dos filhos e a pensão, o divórcio pode ser <strong>consensual</strong> — mais rápido e menos custoso. Quando não há acordo em algum desses pontos, o divórcio é <strong>litigioso</strong>, tramitando como um processo judicial contencioso, com prazo mais longo.</p>
+          <p>Havendo consenso e <strong>nenhum filho menor ou incapaz</strong> envolvido, o divórcio pode até ser feito diretamente em cartório, por escritura pública, com a presença de um advogado — sem necessidade de passar pelo Judiciário.</p>
 
-          <h2>Quais são as causas que justificam a rescisão indireta?</h2>
-          <p>A CLT prevê como causas de rescisão indireta:</p>
+          <h2>Regime de bens: a base de toda a partilha</h2>
+          <p>O regime de bens escolhido no casamento (ou, na ausência de pacto antenupcial, o regime legal) determina o que entra e o que fica de fora da partilha:</p>
           <ul>
-            <li>O empregador <strong>exigir serviços superiores às forças</strong> do empregado, proibidos por lei, contrários aos bons costumes ou alheios ao contrato.</li>
-            <li>O empregador <strong>tratar o empregado com rigor excessivo</strong> — assédio moral, humilhações públicas, ameaças constantes.</li>
-            <li>O empregador <strong>expor o empregado a perigo manifesto</strong> de mal considerável — ambientes insalubres sem equipamentos, riscos físicos não gerenciados.</li>
-            <li>O empregador <strong>não cumprir as obrigações do contrato</strong> — salário em atraso por mais de um mês, não pagamento de horas extras, supressão de benefícios.</li>
-            <li>O empregador <strong>praticar atos lesivos à honra e boa fama</strong> do empregado ou de seus familiares.</li>
-            <li>O empregador ou seus prepostos <strong>ofenderem fisicamente</strong> o empregado.</li>
-            <li><strong>Redução do trabalho</strong> que impede o empregado de receber salário mínimo — quando o salário por peça ou tarefa cai abaixo do piso.</li>
+            <li><strong>Comunhão parcial de bens</strong> (regime padrão quando não há pacto): partilha-se apenas o que foi adquirido de forma onerosa durante o casamento. Bens anteriores ao casamento e heranças/doações recebidas por um dos cônjuges não entram na partilha.</li>
+            <li><strong>Comunhão universal de bens</strong>: em regra, todo o patrimônio dos dois cônjuges se comunica, inclusive o que cada um já possuía antes de casar — com algumas exceções previstas em lei.</li>
+            <li><strong>Separação total de bens</strong>: cada cônjuge mantém a titularidade exclusiva do seu próprio patrimônio, sem comunicação. É obrigatória em algumas situações, como no casamento de pessoas maiores de 70 anos (art. 1.641, CC).</li>
+            <li><strong>Participação final nos aquestos</strong>: regime híbrido, pouco usado na prática, em que cada um administra seu patrimônio durante o casamento, mas na dissolução tem direito à metade dos bens adquiridos onerosamente pelo outro durante a união.</li>
           </ul>
 
           <div class="destaque">
-            <p>Atenção: a rescisão indireta precisa ser <strong>reconhecida pela Justiça do Trabalho</strong>. O empregado não pode simplesmente parar de ir trabalhar e exigir as verbas. É necessário ajuizar uma reclamação trabalhista e provar a falta grave do empregador.</p>
+            <p>Atenção: mesmo na comunhão parcial, bens recebidos por herança ou doação durante o casamento <strong>não entram</strong> na partilha — permanecem exclusivos de quem os recebeu, salvo se houver cláusula expressa em sentido contrário no ato de doação.</p>
           </div>
 
-          <h2>Quais verbas o empregado recebe na rescisão indireta?</h2>
-          <p>As verbas são as mesmas de uma demissão sem justa causa:</p>
-          <ul>
-            <li>Saldo de salário (dias trabalhados no mês da saída).</li>
-            <li>Aviso prévio indenizado (mínimo 30 dias, proporcional ao tempo de serviço — até 90 dias).</li>
-            <li>Férias vencidas e proporcionais, acrescidas de 1/3 constitucional.</li>
-            <li>13º salário proporcional.</li>
-            <li>FGTS de todo o período + multa de 40%.</li>
-            <li>Direito ao seguro-desemprego (se cumprir os requisitos de tempo de contribuição).</li>
-          </ul>
+          <h2>O que costuma entrar na partilha</h2>
+          <p>Além de imóveis, veículos e contas bancárias, também podem integrar a partilha: participações societárias e empresas constituídas durante o casamento, imóveis ainda em financiamento (o saldo devedor também é dividido), e dívidas contraídas em benefício da família. Previdência privada (PGBL/VGBL), a depender do regime e do momento das contribuições, também costuma ser discutida.</p>
 
-          <h2>E se o juiz não reconhecer a rescisão indireta?</h2>
-          <p>Esse é o principal risco: se o pedido de rescisão indireta for negado, o empregado que abandonou o emprego para ajuizar a ação pode ter o contrato caracterizado como <strong>pedido de demissão</strong> — e perder parte das verbas rescisórias.</p>
-          <p>Por isso, a estratégia é fundamental. Em muitos casos, o advogado trabalhista orienta o empregado a <strong>continuar trabalhando</strong> enquanto a ação tramita, para evitar esse risco. Em outros, quando a situação é de risco físico ou psicológico grave, a saída imediata pode ser necessária e justificada.</p>
+          <h2>Divórcio extrajudicial: quando é possível</h2>
+          <p>O divórcio em cartório é mais rápido e costuma sair mais barato que um processo judicial. Ele é possível quando: (i) há consenso entre as partes sobre todos os termos; (ii) não existem filhos menores de idade ou incapazes; e (iii) as partes estão assistidas por advogado, que pode ser único para o casal em caso de consenso total.</p>
 
-          <h2>Como provar a falta grave do empregador?</h2>
-          <p>A prova é o ponto central da ação. Os meios mais eficazes incluem:</p>
-          <ul>
-            <li><strong>Documentos:</strong> contracheques, extratos do FGTS, registros de ponto, e-mails, mensagens de WhatsApp com ordens abusivas ou humilhações.</li>
-            <li><strong>Testemunhas:</strong> colegas de trabalho que presenciaram as situações. Mesmo ex-funcionários podem testemunhar.</li>
-            <li><strong>Laudos periciais:</strong> em casos de insalubridade, periculosidade ou assédio moral com impacto psicológico documentado.</li>
-            <li><strong>Reclamações anteriores:</strong> registro de denúncias feitas ao RH ou à CIPA que não foram atendidas.</li>
-          </ul>
+          <h2>E a guarda dos filhos e a pensão?</h2>
+          <p>Quando há filhos menores, essas questões precisam ser resolvidas no processo — seja por acordo homologado judicialmente, seja por decisão do juiz em caso de litígio. Elas são tratadas com regras próprias, distintas da partilha patrimonial entre os cônjuges.</p>
 
-          <h2>Salário em atraso: um dos casos mais comuns</h2>
-          <p>Um dos pedidos de rescisão indireta mais frequentes na Justiça do Trabalho é o <strong>atraso reiterado de salário</strong>. A jurisprudência do TST e dos TRTs é pacífica: atrasos por mais de um mês, de forma reiterada, configuram descumprimento contratual grave e autorizam a rescisão indireta.</p>
-          <p>Se você está há meses sem receber o salário corretamente, ou se está sofrendo assédio, redução de benefícios ou exposição a riscos no trabalho, procure um advogado trabalhista antes de tomar qualquer decisão. A análise do caso concreto é o que vai definir a melhor estratégia.</p>
+          <h2>Quanto tempo demora?</h2>
+          <p>Um divórcio consensual sem filhos menores, feito em cartório, pode ser concluído em poucos dias. Já um divórcio litigioso, com disputa sobre bens, guarda ou pensão, pode levar de alguns meses a alguns anos, dependendo da complexidade do patrimônio e do grau de conflito entre as partes.</p>
+          <p>Antes de qualquer negociação ou ação, vale a pena reunir a documentação do casamento, dos bens do casal e conversar com um advogado sobre o regime aplicável ao seu caso — isso evita perdas patrimoniais desnecessárias.</p>
         </article>
 
         <aside class="artigo-sidebar">
           <div class="cta-box">
-            <h3 class="cta-box__title">Está sofrendo alguma dessas situações?</h3>
-            <p class="cta-box__text">Fale com o Dr. Kevin Miyamoto antes de tomar qualquer decisão. Cada caso exige uma estratégia diferente.</p>
+            <h3 class="cta-box__title">Está passando por um divórcio?</h3>
+            <p class="cta-box__text">Fale com o Dr. Kevin Miyamoto e entenda seus direitos na partilha de bens antes de tomar qualquer decisão.</p>
             <a href="https://wa.me/5511966180656" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Falar com o advogado no WhatsApp">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
               FALAR COM O ADVOGADO
@@ -219,14 +209,14 @@
     <div class="container">
       <h2 class="relacionados__title">Artigos relacionados</h2>
       <div class="rel-grid">
-        <a href="artigo-8.html" class="rel-card">
-          <span class="rel-card__badge">Direito Trabalhista</span>
-          <h3 class="rel-card__title">Reconhecimento de vínculo empregatício: quando você tem direito às verbas trabalhistas?</h3>
+        <a href="artigo-1.html" class="rel-card">
+          <span class="rel-card__badge">Direito Civil</span>
+          <h3 class="rel-card__title">O que é responsabilidade civil e quando você pode pedir indenização?</h3>
           <span class="rel-card__link">LER ARTIGO →</span>
         </a>
-        <a href="artigo-9.html" class="rel-card">
-          <span class="rel-card__badge">Direito Trabalhista</span>
-          <h3 class="rel-card__title">Insalubridade e periculosidade: qual a diferença e quanto você tem direito a receber?</h3>
+        <a href="artigo-5.html" class="rel-card">
+          <span class="rel-card__badge">Direito Civil</span>
+          <h3 class="rel-card__title">Pensão alimentícia: quem tem direito e como é calculado o valor?</h3>
           <span class="rel-card__link">LER ARTIGO →</span>
         </a>
       </div>
