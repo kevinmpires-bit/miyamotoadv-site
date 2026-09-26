@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0B1C3B">
-<meta name="description" content="Miyamoto Advocacia — Direito Civil, Criminal, Trabalhista e Previdenciário. Atendimento direto, estratégia clara e resultado. OAB/SP Nº 540.970.">
+<meta name="description" content="Miyamoto Advocacia — Direito Civil, Criminal, Trabalhista e Previdenciário. Atendimento direto, estratégia clara e resultado. Atendimento em todo o Brasil. OAB/SP Nº 540.970.">
 <title>Miyamoto Advocacia — Direito Civil, Criminal, Trabalhista e Previdenciário</title>
 <link rel="icon" type="image/png" href="assets/aureo_brasao_redondo.png">
 <meta property="og:title" content="Miyamoto Advocacia — Direito Civil, Criminal, Trabalhista e Previdenciário">
@@ -34,7 +34,14 @@
   ::-webkit-scrollbar-thumb:hover{background:var(--gold);}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);}
   section{padding:120px 0;position:relative;overflow:hidden;}
-  canvas.stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+  .bg-lines{position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%,rgba(200,168,75,.10),transparent 70%),
+      repeating-linear-gradient(90deg,rgba(200,168,75,.075) 0 1px,transparent 1px 132px);
+    background-position:center top;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 70%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 22%,#000 70%,transparent);}
+  .bg-lines ~ .wrap{position:relative;z-index:1;}
 
   /* Reveal */
   [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
@@ -142,7 +149,9 @@
   .cinfo .row{border-bottom:1px solid rgba(200,168,75,.14);padding-bottom:22px;}
   .cinfo .row:last-child{border-bottom:none;padding-bottom:0;}
   .cinfo .row .k{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-gray);margin-bottom:6px;}
-  .cinfo .row .v{font-family:'Gloock',serif;font-size:22px;color:var(--cream);}
+  .cinfo .row .v{font-family:'Gloock',serif;font-size:22px;color:var(--cream);overflow-wrap:anywhere;}
+  .cinfo .row .note{font-size:13.5px;color:var(--blue-gray);margin-top:6px;}
+  .cinfo .row .note strong{color:var(--gold);font-weight:600;}
   a.v{background-image:linear-gradient(var(--gold),var(--gold));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:color .25s,background-size .4s cubic-bezier(.22,.7,.2,1);}
   a.v:hover{color:var(--gold);background-size:100% 1px;}
   .cbox.accent{background:linear-gradient(160deg,#1A3060,#12274d);border-color:rgba(200,168,75,.3);display:flex;flex-direction:column;justify-content:center;}
@@ -209,7 +218,7 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <canvas class="stars"></canvas>
+  <div class="bg-lines" aria-hidden="true"></div>
   <div class="glow"></div>
   <div class="wrap hero-inner">
     <div class="kicker" data-reveal><span class="line"></span><span class="txt">Advocacia · Direito &amp; Resultado</span><span class="line"></span></div>
@@ -273,7 +282,7 @@
 
 <!-- 03 SOBRE -->
 <section id="sobre" style="background:#07122A;">
-  <canvas class="stars"></canvas>
+  <div class="bg-lines" aria-hidden="true"></div>
   <div class="wrap about-grid about">
     <div data-reveal>
       <div class="eyebrow"><span class="line"></span><span class="txt">03 — O Advogado</span></div>
@@ -330,20 +339,22 @@
 
 <!-- 05 CONTATO -->
 <section id="contato" style="background:#07122A;">
-  <canvas class="stars"></canvas>
+  <div class="bg-lines" aria-hidden="true"></div>
   <div class="wrap">
     <div data-reveal style="text-align:center;">
       <div class="eyebrow center"><span class="line"></span><span class="txt">05 — Contato</span><span class="line"></span></div>
       <h2 class="sec-title">O primeiro passo é o mais simples.</h2>
-      <p style="color:var(--blue-gray);margin:8px 0 0;">Fale diretamente com o advogado.</p>
+      <p style="color:var(--blue-gray);margin:8px 0 0;">Fale diretamente com o advogado. Atendimento em todo o Brasil.</p>
     </div>
     <div class="contact-grid">
       <div class="cbox" data-reveal>
         <span class="lbl">Informações de contato</span>
         <div class="cinfo">
           <div class="row"><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5511966180656" target="_blank" rel="noopener">(11) 96618-0656</a></div>
-          <div class="row"><div class="k">Instagram</div><a class="v" href="https://instagram.com/Keh_Miyamoto" target="_blank" rel="noopener">@Keh_Miyamoto</a></div>
-          <div class="row"><div class="k">Atendimento</div><div class="v">Presencial e Online</div></div>
+          <div class="row"><div class="k">E-mail</div><a class="v" href="mailto:kevinmpires@gmail.com">kevinmpires@gmail.com</a></div>
+          <div class="row"><div class="k">Instagram</div><a class="v" href="https://instagram.com/miyamoto.adv" target="_blank" rel="noopener">@miyamoto.adv</a></div>
+          <div class="row"><div class="k">Horário de atendimento</div><div class="v">08:00 às 18:00</div><p class="note"><strong>Emergências:</strong> atendimento 24 horas</p></div>
+          <div class="row"><div class="k">Abrangência</div><div class="v">Todo o Brasil</div><p class="note">Presencial e online</p></div>
         </div>
       </div>
       <div class="cbox accent" data-reveal style="transition-delay:.1s">
@@ -361,15 +372,16 @@
       <div>
         <div class="foot-brand"><img src="assets/aureo_brasao_redondo.png" alt=""><span class="n">Miyamoto Advocacia</span></div>
         <p class="tag">Direito · Método · Resultado</p>
-        <p class="desc">Direito Civil, Criminal, Trabalhista e Previdenciário. São Paulo — SP.</p>
+        <p class="desc">Direito Civil, Criminal, Trabalhista e Previdenciário. Atendimento em todo o Brasil.</p>
+        <p class="desc" style="margin-top:10px;">08:00 às 18:00 · Emergências 24 horas</p>
       </div>
       <div class="foot-col">
         <div class="h">Navegação</div>
         <div class="links"><a href="#inicio">Início</a><a href="#areas">Áreas</a><a href="#sobre">Sobre</a><a href="#blog">Blog</a><a href="#contato">Contato</a></div>
       </div>
       <div class="foot-col">
-        <div class="h">Redes Sociais</div>
-        <div class="links"><a href="https://wa.me/5511966180656" target="_blank" rel="noopener">(11) 96618-0656</a><a href="https://instagram.com/Keh_Miyamoto" target="_blank" rel="noopener">@Keh_Miyamoto</a></div>
+        <div class="h">Contato</div>
+        <div class="links"><a href="https://wa.me/5511966180656" target="_blank" rel="noopener">(11) 96618-0656</a><a href="mailto:kevinmpires@gmail.com">kevinmpires@gmail.com</a><a href="https://instagram.com/miyamoto.adv" target="_blank" rel="noopener">@miyamoto.adv</a></div>
       </div>
     </div>
     <div class="copy"><p>© <span data-year>2026</span> Miyamoto Advocacia. Todos os direitos reservados. OAB/SP Nº 540.970</p></div>
@@ -386,27 +398,6 @@
 (function(){
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Starfield
-  if(!reduced){
-    document.querySelectorAll('canvas.stars').forEach(function(cv){
-      var ctx=cv.getContext('2d'),stars=[],w=0,h=0,dpr=1;
-      function resize(){
-        dpr=Math.min(window.devicePixelRatio||1,2);
-        var p=cv.parentElement.getBoundingClientRect();w=p.width;h=p.height;
-        cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-        var count=Math.min(220,Math.floor(w*h/6500));stars=[];
-        for(var i=0;i<count;i++)stars.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.3+0.25,a:Math.random()*6.28,s:Math.random()*0.022+0.004,g:Math.random()>0.86});
-      }
-      resize();window.addEventListener('resize',resize);
-      (function draw(){
-        ctx.clearRect(0,0,w,h);
-        for(var i=0;i<stars.length;i++){var st=stars[i];st.a+=st.s;var al=0.25+Math.abs(Math.sin(st.a))*0.75;
-          ctx.beginPath();ctx.arc(st.x,st.y,st.r,0,6.283);
-          ctx.fillStyle=st.g?'rgba(200,168,75,'+(al*0.9)+')':'rgba(253,250,240,'+(al*0.7)+')';ctx.fill();}
-        requestAnimationFrame(draw);
-      })();
-    });
-  }
 
   // Reveal on scroll
   var revs=[].slice.call(document.querySelectorAll('[data-reveal]'));
