@@ -1,0 +1,159 @@
+/* ════════════════════════════════════════════════
+   MIYAMOTO ADVOCACIA — Camada de interface compartilhada
+   Botões, links, foco, navegação, cards e WhatsApp.
+   Carregada por último em todas as páginas.
+   ════════════════════════════════════════════════ */
+
+:root {
+  --ui-gold:      #C8A84B;
+  --ui-gold-hi:   #E2C877;
+  --ui-navy:      #0B1C3B;
+  --ui-navy-dark: #07122A;
+  --ui-cream:     #FDFAF0;
+  --ui-mist:      #A8BDD8;
+  --ui-line:      rgba(200,168,75,.16);
+  --ui-ease:      cubic-bezier(.22,.7,.2,1);
+  --ui-fast:      180ms;
+  --ui-med:       360ms;
+}
+
+/* ── Acessibilidade ─────────────────────────────── */
+.skip-link {
+  position: fixed; top: 12px; left: 12px; z-index: 2000;
+  background: var(--ui-gold); color: var(--ui-navy-dark);
+  font: 600 12px/1 'Work Sans', sans-serif; letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 18px; transform: translateY(-160%);
+  transition: transform var(--ui-fast) var(--ui-ease);
+}
+.skip-link:focus { transform: none; color: var(--ui-navy-dark); }
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--ui-gold-hi);
+  outline-offset: 3px;
+}
+
+/* ── Botões ─────────────────────────────────────── */
+.btn {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 52px; padding: 0 30px;
+  font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 12px;
+  letter-spacing: .16em; text-transform: uppercase; line-height: 1.2; text-align: center;
+  border: 1px solid transparent; border-radius: 0; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--ui-fast) var(--ui-ease),
+    background-color var(--ui-fast) var(--ui-ease),
+    border-color var(--ui-fast) var(--ui-ease),
+    box-shadow var(--ui-med) var(--ui-ease),
+    transform var(--ui-fast) var(--ui-ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+.btn .arr { display: inline-block; transition: transform var(--ui-med) var(--ui-ease); }
+.btn:hover .arr, .btn:focus-visible .arr { transform: translateX(5px); }
+
+/* Principal: dourado sólido */
+.btn-solid, .btn.btn-primary {
+  background: var(--ui-gold); border-color: var(--ui-gold); color: var(--ui-navy-dark);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.28);
+}
+.btn-solid:hover, .btn.btn-primary:hover {
+  background: var(--ui-gold-hi); border-color: var(--ui-gold-hi); color: var(--ui-navy-dark);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 14px 32px -14px rgba(200,168,75,.75);
+}
+
+/* Secundário: contorno com preenchimento que corre da esquerda */
+.btn-ghost {
+  background: transparent; border-color: rgba(200,168,75,.65); color: var(--ui-gold);
+  padding: 0 30px;
+}
+.btn-ghost::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: var(--ui-gold);
+  transform: scaleX(0); transform-origin: right center;
+  transition: transform 440ms var(--ui-ease);
+}
+.btn-ghost:hover, .btn-ghost:focus-visible { color: var(--ui-navy-dark); border-color: var(--ui-gold); background: transparent; }
+.btn-ghost:hover::before, .btn-ghost:focus-visible::before { transform: scaleX(1); transform-origin: left center; }
+
+/* Botão na caixa lateral dos artigos: largura estreita */
+.cta-box .btn { padding: 0 18px; letter-spacing: .1em; white-space: nowrap; }
+
+@media (max-width: 479px) {
+  .btn { width: 100%; }
+}
+
+/* ── Links de texto com seta ────────────────────── */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 11px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--ui-gold);
+  padding: 6px 0; background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%;
+  transition: background-size var(--ui-med) var(--ui-ease), color var(--ui-fast);
+}
+.link-arrow:hover, .link-arrow:focus-visible { background-size: 100% 1px; color: var(--ui-gold-hi); }
+.link-arrow .arr, .r .arr { display: inline-block; transition: transform var(--ui-med) var(--ui-ease); }
+.link-arrow:hover .arr, .link-arrow:focus-visible .arr { transform: translateX(4px); }
+
+/* ── Barra de progresso de leitura (artigos) ────── */
+.read-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 1001;
+  background: var(--ui-gold); transform-origin: 0 50%; transform: scaleX(0);
+  pointer-events: none;
+}
+
+/* ── WhatsApp flutuante ─────────────────────────── */
+.wa, .whatsapp-fab {
+  position: fixed; right: 24px; bottom: 24px; z-index: 800;
+  width: 56px; height: 56px; border-radius: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #25D366; color: #fff;
+  box-shadow: 0 10px 28px -8px rgba(0,0,0,.55);
+  animation: none;
+  transition: transform var(--ui-fast) var(--ui-ease), box-shadow var(--ui-med) var(--ui-ease), opacity var(--ui-med), visibility var(--ui-med);
+}
+.wa:hover, .whatsapp-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -10px rgba(0,0,0,.6); }
+.wa svg, .whatsapp-fab svg { width: 28px; height: 28px; fill: #fff; stroke: none; }
+.wa .pulse, .whatsapp-fab .pulse {
+  position: absolute; inset: 0; z-index: -1; background: #25D366;
+  animation: uiPulse 2.4s ease-out 3s 3 both;
+}
+@keyframes uiPulse {
+  0%   { transform: scale(1);   opacity: .5; }
+  70%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.wa .tip, .whatsapp-fab .tip, .whatsapp-fab__tooltip {
+  position: absolute; right: calc(100% + 12px); top: 50%;
+  transform: translate(6px, -50%); white-space: nowrap;
+  background: var(--ui-navy-dark); color: var(--ui-cream);
+  border: 1px solid var(--ui-line);
+  font: 500 12px/1 'Work Sans', sans-serif; letter-spacing: .04em;
+  padding: 10px 14px; opacity: 0; pointer-events: none;
+  transition: opacity var(--ui-fast), transform var(--ui-med) var(--ui-ease);
+}
+.wa:hover .tip, .wa:focus-visible .tip,
+.whatsapp-fab:hover .tip, .whatsapp-fab:focus-visible .tip,
+.whatsapp-fab:hover .whatsapp-fab__tooltip, .whatsapp-fab:focus-visible .whatsapp-fab__tooltip {
+  opacity: 1; transform: translate(0, -50%);
+}
+.fab-hidden { opacity: 0 !important; visibility: hidden; transform: translateY(12px) !important; }
+@media (hover: none) { .wa .tip, .whatsapp-fab .tip, .whatsapp-fab__tooltip { display: none; } }
+
+/* ── Botão de menu (hambúrguer → X) ─────────────── */
+.menu-btn span, .nav__burger-line { transition: transform var(--ui-med) var(--ui-ease), opacity var(--ui-fast); }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Movimento reduzido ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+  .read-progress { display: none; }
+}

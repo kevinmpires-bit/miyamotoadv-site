@@ -13,12 +13,12 @@
   --white-muted:    rgba(255,255,255,0.08);
 
   /* ── TEMA ADVOCACIA ── */
-  --adv-bg:           #F8F7F4;
-  --adv-bg-alt:       #FFFFFF;
-  --adv-bg-dark:      #0B1C3B;
-  --adv-text:         #0B1C3B;
-  --adv-text-muted:   #4A6070;
-  --adv-border:       #DDD8CC;
+  --adv-bg:           #0B1C3B;
+  --adv-bg-alt:       #0F2348;
+  --adv-bg-dark:      #07122A;
+  --adv-text:         #FDFAF0;
+  --adv-text-muted:   #A8BDD8;
+  --adv-border:       #1A3060;
   --adv-border-dark:  #1A3060;
 
   /* ── TEMA ÁUREO ── */

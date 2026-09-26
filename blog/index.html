@@ -10,16 +10,22 @@
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/advocacia.css">
+  <link rel="stylesheet" href="../css/ui.css">
+  <link rel="icon" type="image/png" href="../assets/aureo_brasao_redondo.png">
 </head>
 <body>
+  <a class="skip-link" href="#blog-grid">Pular para os artigos</a>
 
   <nav class="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo-text">Miyamoto Advocacia</a>
-      <div class="nav__links" role="menubar">
+      <a href="../index.html" class="nav__logo" aria-label="Miyamoto Advocacia — início">
+        <img src="../assets/aureo_brasao_redondo.png" alt="">
+        <span class="nav__logo-text">Miyamoto Advocacia<span class="nav__logo-sub">OAB/SP Nº 540.970</span></span>
+      </a>
+      <div class="nav__links">
         <a href="../index.html#areas"   class="nav__link">Áreas</a>
         <a href="../index.html#sobre"   class="nav__link">Sobre</a>
-        <a href="index.html"           class="nav__link">Blog</a>
+        <a href="index.html"           class="nav__link active" aria-current="page">Blog</a>
         <a href="../index.html#contato" class="nav__link">Contato</a>
       </div>
       <div class="nav__right">
@@ -52,12 +58,13 @@
   <section class="blog-page">
     <div class="container">
       <div class="blog-filters" role="group" aria-label="Filtrar artigos por área">
-        <button class="blog-filter active" data-filter="todos" onclick="filterBlog(this,'todos')">Todos</button>
-        <button class="blog-filter" data-filter="civil" onclick="filterBlog(this,'civil')">Direito Civil</button>
-        <button class="blog-filter" data-filter="criminal" onclick="filterBlog(this,'criminal')">Direito Criminal</button>
-        <button class="blog-filter" data-filter="trabalhista" onclick="filterBlog(this,'trabalhista')">Direito Trabalhista</button>
-        <button class="blog-filter" data-filter="previdenciario" onclick="filterBlog(this,'previdenciario')">Direito Previdenciário</button>
+        <button class="blog-filter active" data-filter="todos" aria-pressed="true" onclick="filterBlog(this,'todos')">Todos</button>
+        <button class="blog-filter" data-filter="civil" aria-pressed="false" onclick="filterBlog(this,'civil')">Direito Civil</button>
+        <button class="blog-filter" data-filter="criminal" aria-pressed="false" onclick="filterBlog(this,'criminal')">Direito Criminal</button>
+        <button class="blog-filter" data-filter="trabalhista" aria-pressed="false" onclick="filterBlog(this,'trabalhista')">Direito Trabalhista</button>
+        <button class="blog-filter" data-filter="previdenciario" aria-pressed="false" onclick="filterBlog(this,'previdenciario')">Direito Previdenciário</button>
       </div>
+      <p class="blog-filters__count" id="blog-count" aria-live="polite">12 artigos</p>
 
       <div class="blog__grid" id="blog-grid">
 
@@ -68,7 +75,7 @@
           </div>
           <h2 class="blog-card__title">O que é responsabilidade civil e quando você pode pedir indenização?</h2>
           <p class="blog-card__excerpt">Entenda quando alguém é obrigado a indenizar outra pessoa — e o que você precisa provar para ter direito ao ressarcimento.</p>
-          <a href="artigo-1.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-1.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="criminal">
@@ -78,7 +85,7 @@
           </div>
           <h2 class="blog-card__title">Habeas corpus: o que é e quando usar?</h2>
           <p class="blog-card__excerpt">O habeas corpus é uma das garantias mais importantes da Constituição. Saiba quando ele pode ser usado para proteger sua liberdade.</p>
-          <a href="artigo-2.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-2.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="trabalhista">
@@ -88,7 +95,7 @@
           </div>
           <h2 class="blog-card__title">Rescisão indireta: quando o empregado pode pedir demissão e receber como se fosse demitido?</h2>
           <p class="blog-card__excerpt">Existem situações em que o empregador descumpre o contrato de forma tão grave que o trabalhador tem direito a encerrar o vínculo com todas as verbas rescisórias.</p>
-          <a href="artigo-3.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-3.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="civil">
@@ -98,7 +105,7 @@
           </div>
           <h2 class="blog-card__title">Divórcio e separação de bens: como funciona a partilha do patrimônio?</h2>
           <p class="blog-card__excerpt">Entenda os regimes de bens, o que entra na partilha e a diferença entre divórcio consensual, litigioso e extrajudicial.</p>
-          <a href="artigo-4.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-4.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="civil">
@@ -108,7 +115,7 @@
           </div>
           <h2 class="blog-card__title">Pensão alimentícia: quem tem direito e como é calculado o valor?</h2>
           <p class="blog-card__excerpt">Saiba quem pode pedir pensão, como o valor é definido e o que acontece quando o pagamento não é feito.</p>
-          <a href="artigo-5.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-5.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="criminal">
@@ -118,7 +125,7 @@
           </div>
           <h2 class="blog-card__title">Livramento condicional: quem tem direito e quais são os requisitos?</h2>
           <p class="blog-card__excerpt">Entenda os requisitos objetivos e subjetivos para sair da prisão antes do fim da pena, sob condições e período de prova.</p>
-          <a href="artigo-6.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-6.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="criminal">
@@ -128,7 +135,7 @@
           </div>
           <h2 class="blog-card__title">Progressão de regime: como funciona a execução da pena?</h2>
           <p class="blog-card__excerpt">Veja as frações de pena exigidas para progredir do regime fechado ao semiaberto e ao aberto após o Pacote Anticrime.</p>
-          <a href="artigo-7.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-7.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="trabalhista">
@@ -138,7 +145,7 @@
           </div>
           <h2 class="blog-card__title">Reconhecimento de vínculo empregatício: quando você tem direito às verbas trabalhistas?</h2>
           <p class="blog-card__excerpt">Trabalha como PJ ou autônomo mas cumpre horário e recebe ordens? Entenda quando isso configura vínculo empregatício.</p>
-          <a href="artigo-8.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-8.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="trabalhista">
@@ -148,7 +155,7 @@
           </div>
           <h2 class="blog-card__title">Insalubridade e periculosidade: qual a diferença e quanto você tem direito a receber?</h2>
           <p class="blog-card__excerpt">Entenda os dois adicionais, como são calculados e como comprovar o direito de receber cada um deles.</p>
-          <a href="artigo-9.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-9.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="previdenciario">
@@ -158,7 +165,7 @@
           </div>
           <h2 class="blog-card__title">Aposentadoria por idade: quais são os requisitos após a Reforma da Previdência?</h2>
           <p class="blog-card__excerpt">Conheça a regra permanente e as regras de transição para quem já contribuía antes da reforma de 2019.</p>
-          <a href="artigo-10.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-10.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="previdenciario">
@@ -168,7 +175,7 @@
           </div>
           <h2 class="blog-card__title">Aposentadoria por incapacidade permanente: como funciona e quem tem direito?</h2>
           <p class="blog-card__excerpt">Entenda os requisitos, como funciona a perícia do INSS e o que fazer se o benefício for negado.</p>
-          <a href="artigo-11.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-11.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
         <article class="blog-card" data-category="previdenciario">
@@ -178,7 +185,7 @@
           </div>
           <h2 class="blog-card__title">BPC/LOAS: como funciona o benefício assistencial para idosos e pessoas com deficiência?</h2>
           <p class="blog-card__excerpt">Saiba quem tem direito ao benefício de um salário mínimo, mesmo sem nunca ter contribuído ao INSS.</p>
-          <a href="artigo-12.html" class="blog-card__link">Ler artigo →</a>
+          <a href="artigo-12.html" class="blog-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></a>
         </article>
 
       </div>
@@ -216,18 +223,20 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2025 Miyamoto Advocacia. Todos os direitos reservados.</span>
+        <span>© <span data-year>2026</span> Miyamoto Advocacia. Todos os direitos reservados.</span>
         <span>OAB/SP Nº 540.970</span>
       </div>
     </div>
   </footer>
 
   <a href="https://wa.me/5511966180656" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-    <span class="whatsapp-fab__tooltip">Falar no WhatsApp</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    <span class="pulse"></span>
+    <span class="tip">Falar no WhatsApp</span>
   </a>
 
   <script src="../js/nav.js"></script>
   <script src="../js/blog.js"></script>
+  <script src="../js/ui.js"></script>
 </body>
 </html>

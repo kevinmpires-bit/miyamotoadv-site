@@ -101,9 +101,15 @@
     .whatsapp-fab svg{width:26px;height:26px;fill:#FFF}
     @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.6);transform:scale(1.05)}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+      .nav__link{position:relative;padding:8px 0}.nav__link::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 350ms cubic-bezier(.22,.7,.2,1)}.nav__link:hover::after,.nav__link[aria-current]::after{transform:scaleX(1)}.nav__link[aria-current]{color:var(--text-main)}
+    .rel-card{position:relative;transition:border-color 350ms,transform 500ms cubic-bezier(.22,.7,.2,1)}.rel-card:hover{transform:translateY(-3px)}.rel-card:hover .rel-card__title{color:var(--gold-hover)}.rel-card__title{transition:color 300ms}.rel-card__link .arr{display:inline-block;transition:transform 360ms cubic-bezier(.22,.7,.2,1)}.rel-card:hover .rel-card__link .arr{transform:translateX(4px)}
+    .artigo-content a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}.artigo-content a:hover{color:var(--gold-hover)}
   </style>
+  <link rel="stylesheet" href="../css/ui.css">
+  <link rel="icon" type="image/png" href="../assets/aureo_brasao_redondo.png">
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o artigo</a>
 
   <nav class="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__inner">
@@ -111,11 +117,11 @@
         <img src="../assets/aureo_brasao_redondo.png" alt="" class="nav__logo-img" aria-hidden="true">
         <span class="nav__logo-text">Miyamoto Advocacia<span class="nav__logo-sub">OAB/SP Nº 540.970</span></span>
       </a>
-      <div class="nav__links" role="menubar">
-        <a href="../index.html#areas"   class="nav__link" role="menuitem">Áreas</a>
-        <a href="../index.html#sobre"   class="nav__link" role="menuitem">Sobre</a>
-        <a href="index.html"            class="nav__link" role="menuitem">Blog</a>
-        <a href="../index.html#contato" class="nav__link" role="menuitem">Contato</a>
+      <div class="nav__links">
+        <a href="../index.html#areas"   class="nav__link">Áreas</a>
+        <a href="../index.html#sobre"   class="nav__link">Sobre</a>
+        <a href="index.html"            class="nav__link" aria-current="page">Blog</a>
+        <a href="../index.html#contato" class="nav__link">Contato</a>
       </div>
       <div style="display:flex;align-items:center;gap:16px">
 
@@ -149,7 +155,7 @@
   <div class="artigo-body">
     <div class="container">
       <div class="artigo-layout">
-        <article class="artigo-content">
+        <article class="artigo-content" id="conteudo">
           <p>Pensão alimentícia é, provavelmente, o tema mais comum — e mais mal compreendido — do direito de família. Muita gente acredita que o valor é definido por uma tabela fixa, ou que só existe entre pais e filhos menores. Nenhuma das duas coisas é verdade.</p>
 
           <h2>O que é pensão alimentícia?</h2>
@@ -195,7 +201,7 @@
             <p class="cta-box__text">O Dr. Kevin Miyamoto analisa seu caso e indica o melhor caminho, seja para fixar, aumentar, reduzir ou cobrar valores em atraso.</p>
             <a href="https://wa.me/5511966180656" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Falar com o advogado no WhatsApp">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-              FALAR COM O ADVOGADO
+              Falar com o advogado
             </a>
           </div>
         </aside>
@@ -210,12 +216,12 @@
         <a href="artigo-1.html" class="rel-card">
           <span class="rel-card__badge">Direito Civil</span>
           <h3 class="rel-card__title">O que é responsabilidade civil e quando você pode pedir indenização?</h3>
-          <span class="rel-card__link">LER ARTIGO →</span>
+          <span class="rel-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></span>
         </a>
         <a href="artigo-4.html" class="rel-card">
           <span class="rel-card__badge">Direito Civil</span>
           <h3 class="rel-card__title">Divórcio e separação de bens: como funciona a partilha do patrimônio?</h3>
-          <span class="rel-card__link">LER ARTIGO →</span>
+          <span class="rel-card__link">Ler artigo <span class="arr" aria-hidden="true">→</span></span>
         </a>
       </div>
     </div>
@@ -224,14 +230,16 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__bottom">
-        <span>© 2025 Miyamoto Advocacia. Todos os direitos reservados.</span>
+        <span>© <span data-year>2026</span> Miyamoto Advocacia. Todos os direitos reservados.</span>
         <span>OAB/SP Nº 540.970</span>
       </div>
     </div>
   </footer>
 
   <a href="https://wa.me/5511966180656" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="pulse"></span>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    <span class="tip">Falar no WhatsApp</span>
   </a>
 
   <script>
@@ -240,5 +248,6 @@
   burger.addEventListener('click',function(){open=!open;burger.classList.toggle('open');nav.classList.toggle('open');burger.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)closeMenu();});
   </script>
+  <script src="../js/ui.js"></script>
 </body>
 </html>
